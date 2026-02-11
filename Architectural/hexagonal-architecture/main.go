@@ -2,13 +2,18 @@ package main
 
 import "fmt"
 
-// Domain / Entities
+// Domain / Core
 type User struct {
 	ID   int
 	Name string
 }
 
-// Application / Use Cases
+// Port: Repository interface
+type UserRepository interface {
+	FindByID(id int) (User, error)
+}
+
+// Use Case / Service
 type UserService struct {
 	repo UserRepository
 }
@@ -25,12 +30,7 @@ func (s *UserService) GetUserName(id int) string {
 	return user.Name
 }
 
-// Interface Adapters / Repository
-type UserRepository interface {
-	FindByID(id int) (User, error)
-}
-
-// Infrastructure / In-memory repository
+// Adapter: In-memory repository
 type InMemoryUserRepo struct {
 	users []User
 }
@@ -51,6 +51,7 @@ func main() {
 			{ID: 2, Name: "Bob"},
 		},
 	}
+
 	service := NewUserService(repo)
 
 	fmt.Println("User 1:", service.GetUserName(1))
