@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://go.dev/blog/go-brand/Go-Logo/PNG/Go-Logo_Blue.png" width="200">
+  <img src="./assets/go-logo.png" width="200">
   <h1 align="center">🐹 Go Design Patterns Collection</h1>
   <p align="center">
     A comprehensive, practical, and production-ready collection of Go design patterns
@@ -138,7 +138,7 @@ go test -v
       Start with **Creational** patterns — they're the most intuitive. Then move to **Structural** and **Behavioral**. Each pattern's README explains the "what" and "why" before the "how".
 
    - ### 🚗 **For Experienced Gophers**
-      Jump straight to **Concurrency** and **Go-Specific** patterns. These show you how Go differs from other languages and how to write idiomatic Go code.
+      Jump straight to **Concurrency** and **Go-Specific** patterns. These show you how Go differs from other launguages and how to write idiomatic Go code.
 
    - ### 🏗️ **For Architects**
       The **Architectural** patterns section demonstrates how to structure entire applications. See how clean architecture and hexagonal architecture are implemented in Go.
